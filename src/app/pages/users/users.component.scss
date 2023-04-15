@@ -1,0 +1,42 @@
+$block: 'users';
+
+.#{$block} {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+  justify-content: center;
+
+  &__detail {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    background: #eee;
+    width: 400px;
+
+    &--avatar {
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      border-radius: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        margin-top: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
