@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.github.com'
+  gitHubApiUrl: 'https://api.github.com',
+  rickAndMortiApiUrl: 'https://rickandmortyapi.com/api'
 };

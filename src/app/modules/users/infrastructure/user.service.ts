@@ -6,7 +6,7 @@ import {User, UserApi} from '../domain/user.interface';
 import {UsersRepository} from '../domain/users.repository.interface';
 import {API_URL} from "../../../app.config";
 import {map} from "rxjs/operators";
-import {getAllUsersMapper} from "./getAllUsersMapper";
+import {getAllUsersMapper} from "./get-all-users.mapper";
 
 @Injectable()
 export class UserService implements UsersRepository {

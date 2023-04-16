@@ -1,11 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {UsersComponent} from "./pages/users/users.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: UsersComponent
+    loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'characters',
+    loadChildren: () => import('./pages/characters/characters.module').then(m => m.CharactersModule)
   }
 ];
 

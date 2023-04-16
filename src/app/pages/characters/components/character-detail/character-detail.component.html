@@ -1,0 +1,10 @@
+<div class="character-detail" *ngIf="character">
+  <div class="character-detail--image">
+    <img [src]="character.image" [alt]="character.name">
+  </div>
+  <div class="character-detail--info">
+    <h3>{{character.name}}</h3>
+    <span>Status: {{character.status}}</span>
+    <span>Species: {{character.species}}</span>
+  </div>
+</div>

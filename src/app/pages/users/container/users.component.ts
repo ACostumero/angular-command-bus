@@ -1,10 +1,10 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {CommandBus} from "../../../../projects/command-bus/src/lib/command-bus";
+import {CommandBus} from "../../../../../projects/command-bus/src/lib/command-bus";
 
-import {User} from "../../modules/users/domain/user.interface";
-import {GetUsersState} from "../../modules/users/domain/get-users.state";
-import {GetAllUsersCommand} from "../../modules/users/application/getUsers/command/get-all-users-command";
+import {User} from "../../../modules/users/domain/user.interface";
+import {GetUsersState} from "../../../modules/users/domain/get-users.state";
+import {GetAllUsersCommand} from "../../../modules/users/application/getUsers/command/get-all-users-command";
 
 @Component({
   selector: 'app-users',

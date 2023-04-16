@@ -1,0 +1,23 @@
+$block: 'characters';
+
+.#{$block} {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex: 1 0 60%;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 20%;
+  }
+
+}

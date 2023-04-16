@@ -7,7 +7,7 @@ import {UsersRepository} from "../../../domain/users.repository.interface";
 import {User} from "../../../domain/user.interface";
 import {GetAllUsersCommand} from "./get-all-users-command";
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class GetAllUsersCommandHandler implements CommandHandler {
   constructor(private getUsersState: GetUsersState, @Inject('UsersRepository') private usersRepository: UsersRepository) {
   }

@@ -1,0 +1,17 @@
+<div *ngIf="characters$ | async as characters" class="characters">
+  <div class="characters__container">
+    <ng-container *ngFor="let character of characters">
+      <app-character-detail [character]="character" (click)="openDetail(character.id)"></app-character-detail>
+    </ng-container>
+  </div>
+  <div class="characters__detail">
+    <h2>Character Detail:</h2>
+    <ng-container  *ngIf="characterDetail$ | async as detail else noDetail">
+      <app-character-detail [character]="detail"></app-character-detail>
+    </ng-container>
+  </div>
+  <ng-template #noDetail>
+    <h3>No character selected</h3>
+  </ng-template>
+</div>
+

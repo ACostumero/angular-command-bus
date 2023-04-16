@@ -9,9 +9,7 @@ export class CommandHandlerNotRegistered implements Error {
    name = 'COMMAND_HANDLER_NOT_REGISTERED';
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CommandHandlerByTokenRegistry implements CommandHandlerRegistry {
   constructor(@Optional() @Inject(COMMAND_HANDLERS) private handlers: CommandHandler[]) {}
   resolve(command: Command): CommandHandler {
