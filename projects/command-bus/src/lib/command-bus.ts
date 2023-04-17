@@ -10,7 +10,7 @@ export class CommandBus {
   constructor(private handlerResolver: CommandHandlerByTokenRegistry) {}
 
   dispatch(command: Command): void {
-    console.log('dispatch event', command.handlerClass.name)
+    console.log(`%c[CommandBus] Dispatching -> ${command.constructor.name}`, "color:lightseagreen; font-weight: bold");
     const handler: CommandHandler = this.handlerResolver.resolve(command);
     handler.handle(command);
   }

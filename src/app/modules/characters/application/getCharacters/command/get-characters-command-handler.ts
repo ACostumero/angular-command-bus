@@ -12,14 +12,13 @@ export class GetCharactersCommandHandler implements CommandHandler {
   constructor(private getCharactersState: GetCharactersState, @Inject('CharactersRepository') private characterRepository: CharacterRepository) {
   }
   handle(command: GetCharactersCommand): void {
-    console.log('handle GetCharactersCommandHandler')
+    console.log(`%c[GetCharacterDetailCommandHandler] Handle -> ${command.constructor.name}`, "color:coral; font-weight: bold");
     this.characterRepository.getAll().pipe(
       first(),
       tap((characters: Character[]) => this.getCharactersState.save(characters))
     ).subscribe({
-      next:(v) => console.log('next',v),
       error:(e) => console.error('error',e),
-      complete:() => console.log('complete'),
+      complete:() => console.log(`%c[${this.constructor.name}] completed`, "color:yellowgreen; font-weight: bold"),
     });
   }
 

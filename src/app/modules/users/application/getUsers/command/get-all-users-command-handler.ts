@@ -12,14 +12,13 @@ export class GetAllUsersCommandHandler implements CommandHandler {
   constructor(private getUsersState: GetUsersState, @Inject('UsersRepository') private usersRepository: UsersRepository) {
   }
   handle(command: GetAllUsersCommand): void {
-    console.log('handle GetAllUsersCommandHandler')
+    console.log(`%c[${this.constructor.name}] Handle -> ${command.constructor.name}`, "color:coral; font-weight: bold");
     this.usersRepository.getAll().pipe(
       first(),
       tap((users: User[]) => this.getUsersState.save(users))
     ).subscribe({
-      next:(v) => console.log('next',v),
       error:(e) => console.error('error',e),
-      complete:() => console.log('complete'),
+      complete:() => console.log(`%c[${this.constructor.name}] completed`, "color:yellowgreen; font-weight: bold"),
     });
   }
 
