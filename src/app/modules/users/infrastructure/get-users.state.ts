@@ -1,8 +1,8 @@
 import {BehaviorSubject, Observable} from 'rxjs';
-import {User} from './user.interface';
+import {User} from '../domain/user.interface';
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
-import {UsersState} from "./users-state.interface";
+import {UsersState} from "../domain/users-state.interface";
 import {State} from "../../../core/interfaces/state.interface";
 
 @Injectable()

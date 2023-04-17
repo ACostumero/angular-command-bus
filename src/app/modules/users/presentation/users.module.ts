@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {UsersComponent} from "./container/users.component";
-import {COMMAND_HANDLERS} from "../../../../projects/command-bus/src/lib/tokens/command-handler.token";
+import {COMMAND_HANDLERS} from "../../../../../projects/command-bus/src/lib/tokens/command-handler.token";
 import {
   GetAllUsersCommandHandler
-} from "../../modules/users/application/getUsers/command/get-all-users-command-handler";
-import {UserService} from "../../modules/users/infrastructure/user.service";
-import {API_URL} from "../../app.config";
-import {environment} from "../../../environments/environment.development";
+} from "../application/getUsers/command/get-all-users-command-handler";
+import {UserService} from "../infrastructure/user.service";
+import {API_URL} from "../../../app.config";
+import {environment} from "../../../../environments/environment.development";
 import {UsersRoutingModule} from "./users-routing.module";
-import {CommandBus} from "../../../../projects/command-bus/src/lib/command-bus";
+import {CommandBus} from "../../../../../projects/command-bus/src/lib/command-bus";
 import {
   CommandHandlerByTokenRegistry
-} from "../../../../projects/command-bus/src/lib/resolvers/command-handler-by-token-registry";
-import {GetUsersState} from "../../modules/users/domain/get-users.state";
+} from "../../../../../projects/command-bus/src/lib/resolvers/command-handler-by-token-registry";
+import {GetUsersState} from "../infrastructure/get-users.state";
 
 export const apiUrlProvider = {
   provide: API_URL,

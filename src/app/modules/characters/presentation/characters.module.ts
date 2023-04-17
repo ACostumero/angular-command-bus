@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CharactersComponent} from "./container/characters.component";
-import {API_URL} from "../../app.config";
-import {environment} from "../../../environments/environment.development";
-import {COMMAND_HANDLERS} from "../../../../projects/command-bus/src/lib/tokens/command-handler.token";
-import {CharacterService} from "../../modules/characters/infrastructure/character.service";
+import {API_URL} from "../../../app.config";
+import {environment} from "../../../../environments/environment.development";
+import {COMMAND_HANDLERS} from "../../../../../projects/command-bus/src/lib/tokens/command-handler.token";
+import {CharacterService} from "../infrastructure/character.service";
 import {CharactersRoutingModule} from "./characters-routing.module";
-import {CommandBus} from "../../../../projects/command-bus/src/lib/command-bus";
+import {CommandBus} from "../../../../../projects/command-bus/src/lib/command-bus";
 import {
   CommandHandlerByTokenRegistry
-} from "../../../../projects/command-bus/src/lib/resolvers/command-handler-by-token-registry";
-import {GetCharacterDetailState} from "../../modules/characters/domain/get-character-detail.state";
+} from "../../../../../projects/command-bus/src/lib/resolvers/command-handler-by-token-registry";
+import {GetCharacterDetailState} from "../infrastructure/get-character-detail.state";
 import {
   GetCharactersCommandHandler
-} from "../../modules/characters/application/getCharacters/command/get-characters-command-handler";
+} from "../application/getCharacters/command/get-characters-command-handler";
 import {
   GetCharacterDetailCommandHandler
-} from "../../modules/characters/application/getCharacterDetail/command/get-character-detail-command-handler";
-import {GetCharactersState} from "../../modules/characters/domain/get-character.state";
+} from "../application/getCharacterDetail/command/get-character-detail-command-handler";
+import {GetCharactersState} from "../infrastructure/get-character.state";
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 export const apiUrlProvider = {

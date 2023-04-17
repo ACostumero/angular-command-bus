@@ -7,7 +7,9 @@ import {CommandHandlerNotRegistered} from "../errors/command-handler-not-registe
 
 @Injectable()
 export class CommandHandlerByTokenRegistry implements CommandHandlerRegistry {
-  constructor(@Optional() @Inject(COMMAND_HANDLERS) private handlers: CommandHandler[]) {}
+  constructor(@Optional() @Inject(COMMAND_HANDLERS) private handlers: CommandHandler[]) {
+    console.log('handlers array', this.handlers)
+  }
   resolve(command: Command): CommandHandler {
     console.log(`%c[CommandHandlerRegistry] Trying to resolve -> ${command.handlerClass.name}`, "color:steelblue; font-weight: bold");
     const handler = this.handlers.find(handler => handler instanceof command.handlerClass);

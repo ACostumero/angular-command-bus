@@ -4,7 +4,7 @@ import {tap} from "rxjs/operators";
 import {CommandHandler} from "../../../../../../../projects/command-bus/src/lib/interfaces/command-handler.interface";
 import {GetCharacterDetailCommand} from "./get-character-detail-command";
 import {CharacterRepository} from "../../../domain/character.repository.interface";
-import {GetCharacterDetailState} from "../../../domain/get-character-detail.state";
+import {GetCharacterDetailState} from "../../../infrastructure/get-character-detail.state";
 import {Character} from "../../../domain/character.interface";
 
 @Injectable()

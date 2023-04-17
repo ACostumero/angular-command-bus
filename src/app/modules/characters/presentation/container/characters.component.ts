@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {CommandBus} from "../../../../../projects/command-bus/src/lib/command-bus";
+import {CommandBus} from "../../../../../../projects/command-bus/src/lib/command-bus";
 import {
   GetCharacterDetailCommand
-} from "../../../modules/characters/application/getCharacterDetail/command/get-character-detail-command";
+} from "../../application/getCharacterDetail/command/get-character-detail-command";
 import {Observable} from "rxjs";
-import {Character} from "../../../modules/characters/domain/character.interface";
+import {Character} from "../../domain/character.interface";
 import {
   GetCharactersCommand
-} from "../../../modules/characters/application/getCharacters/command/get-characters-command";
-import {GetCharactersState} from "../../../modules/characters/domain/get-character.state";
-import {GetCharacterDetailState} from "../../../modules/characters/domain/get-character-detail.state";
+} from "../../application/getCharacters/command/get-characters-command";
+import {GetCharactersState} from "../../infrastructure/get-character.state";
+import {GetCharacterDetailState} from "../../infrastructure/get-character-detail.state";
 
 @Component({
   selector: 'app-characters',

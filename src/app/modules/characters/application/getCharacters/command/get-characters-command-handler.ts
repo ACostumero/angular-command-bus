@@ -5,7 +5,7 @@ import {CommandHandler} from "../../../../../../../projects/command-bus/src/lib/
 import {GetCharactersCommand} from "./get-characters-command";
 import {CharacterRepository} from "../../../domain/character.repository.interface";
 import {Character} from "../../../domain/character.interface";
-import {GetCharactersState} from "../../../domain/get-character.state";
+import {GetCharactersState} from "../../../infrastructure/get-character.state";
 
 @Injectable()
 export class GetCharactersCommandHandler implements CommandHandler {
