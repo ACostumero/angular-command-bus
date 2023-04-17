@@ -8,7 +8,7 @@ import {Character} from "../../domain/character.interface";
 import {
   GetCharactersCommand
 } from "../../application/getCharacters/command/get-characters-command";
-import {GetCharactersState} from "../../infrastructure/get-character.state";
+import {GetCharactersState} from "../../infrastructure/get-characters.state";
 import {GetCharacterDetailState} from "../../infrastructure/get-character-detail.state";
 
 @Component({

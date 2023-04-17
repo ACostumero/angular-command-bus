@@ -17,7 +17,7 @@ import {
 import {
   GetCharacterDetailCommandHandler
 } from "../application/getCharacterDetail/command/get-character-detail-command-handler";
-import {GetCharactersState} from "../infrastructure/get-character.state";
+import {GetCharactersState} from "../infrastructure/get-characters.state";
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 export const apiUrlProvider = {
