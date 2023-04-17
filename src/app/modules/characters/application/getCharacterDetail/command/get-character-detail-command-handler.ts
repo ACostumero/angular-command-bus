@@ -15,7 +15,7 @@ export class GetCharacterDetailCommandHandler implements CommandHandler {
     console.log(`%c[GetCharacterDetailCommandHandler] Handle -> ${command.constructor.name}`, "color:coral; font-weight: bold");
     this.characterRepository.getById(command.payload).pipe(
       first(),
-      tap((character: Character) => this.getCharacterState.save(character))
+      tap((character: Character) => this.getCharacterState.store(character))
     ).subscribe({
       error:(e) => console.error('error',e),
       complete:() => console.log(`%c[${this.constructor.name}] completed`, "color:yellowgreen; font-weight: bold"),

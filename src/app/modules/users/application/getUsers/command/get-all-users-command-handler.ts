@@ -15,7 +15,7 @@ export class GetAllUsersCommandHandler implements CommandHandler {
     console.log(`%c[${this.constructor.name}] Handle -> ${command.constructor.name}`, "color:coral; font-weight: bold");
     this.usersRepository.getAll().pipe(
       first(),
-      tap((users: User[]) => this.getUsersState.save(users))
+      tap((users: User[]) => this.getUsersState.store(users))
     ).subscribe({
       error:(e) => console.error('error',e),
       complete:() => console.log(`%c[${this.constructor.name}] completed`, "color:yellowgreen; font-weight: bold"),

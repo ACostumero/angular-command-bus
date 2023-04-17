@@ -3,13 +3,14 @@ import {User} from './user.interface';
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {UsersState} from "./users-state.interface";
+import {State} from "../../../core/interfaces/state.interface";
 
 @Injectable()
-export class GetUsersState {
+export class GetUsersState implements State {
   private state: UsersState = {users: [], count: 0};
   private source: BehaviorSubject<UsersState> = new BehaviorSubject(this.state);
 
-  save(users: User[]): void {
+  store(users: User[]): void {
     this.source.next({users: [...users], count: users.length});
   }
 
