@@ -35,11 +35,11 @@ export const apiUrlProvider = {
     apiUrlProvider,
     CommandBus,
     CommandHandlerByTokenRegistry,
-    GetCharactersState,
-    GetCharacterDetailState,
     {provide: COMMAND_HANDLERS, useClass: GetCharactersCommandHandler, multi: true},
     {provide: COMMAND_HANDLERS, useClass: GetCharacterDetailCommandHandler, multi: true},
-    {provide: 'CharactersRepository', useClass: CharacterService}
+    {provide: 'CharactersRepository', useClass: CharacterService},
+    {provide: 'GetCharactersState', useClass: GetCharactersState},
+    {provide: 'GetCharacterDetailState', useClass: GetCharacterDetailState},
   ],
 })
 export class CharactersModule { }

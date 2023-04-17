@@ -15,7 +15,9 @@ export class UsersComponent implements OnInit {
 
   public users$: Observable<User[]> = this.usersState.allUsers$;
 
-  constructor(private readonly commandBus: CommandBus, private readonly usersState: GetUsersState) {}
+  constructor(
+    private readonly commandBus: CommandBus,
+    @Inject('GetUsersState') private readonly usersState: GetUsersState) {}
 
   ngOnInit(): void {
     this.commandBus.dispatch(new GetAllUsersCommand());

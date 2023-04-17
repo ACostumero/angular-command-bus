@@ -29,10 +29,10 @@ export const apiUrlProvider = {
   providers: [
     CommandBus,
     CommandHandlerByTokenRegistry,
-    GetUsersState,
     apiUrlProvider,
     {provide: COMMAND_HANDLERS, useClass: GetAllUsersCommandHandler, multi: true},
-    {provide: 'UsersRepository', useClass: UserService}
+    {provide: 'UsersRepository', useClass: UserService},
+    {provide: 'GetUsersState', useClass: GetUsersState}
   ],
 })
 export class UsersModule { }

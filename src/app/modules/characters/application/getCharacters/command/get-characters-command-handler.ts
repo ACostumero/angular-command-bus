@@ -5,11 +5,13 @@ import {CommandHandler} from "../../../../../../../projects/command-bus/src/lib/
 import {GetCharactersCommand} from "./get-characters-command";
 import {CharacterRepository} from "../../../domain/character.repository.interface";
 import {Character} from "../../../domain/character.interface";
-import {GetCharactersState} from "../../../infrastructure/get-character.state";
+import {State} from "../../../../../core/interfaces/state.interface";
 
 @Injectable()
 export class GetCharactersCommandHandler implements CommandHandler {
-  constructor(private getCharactersState: GetCharactersState, @Inject('CharactersRepository') private characterRepository: CharacterRepository) {
+  constructor(
+    @Inject('GetCharactersState') private getCharactersState: State,
+    @Inject('CharactersRepository') private characterRepository: CharacterRepository) {
   }
   handle(command: GetCharactersCommand): void {
     console.log(`%c[GetCharacterDetailCommandHandler] Handle -> ${command.constructor.name}`, "color:coral; font-weight: bold");

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {CommandBus} from "../../../../../../projects/command-bus/src/lib/command-bus";
 import {
   GetCharacterDetailCommand
@@ -22,8 +22,8 @@ export class CharactersComponent implements OnInit{
 
   constructor(
     private readonly commandBus: CommandBus,
-    private readonly getCharactersState: GetCharactersState,
-    private readonly getCharacterDetailState: GetCharacterDetailState,
+    @Inject('GetCharactersState') private readonly getCharactersState: GetCharactersState,
+    @Inject('GetCharacterDetailState') private readonly getCharacterDetailState: GetCharacterDetailState,
     ) {}
 
   ngOnInit(): void {
